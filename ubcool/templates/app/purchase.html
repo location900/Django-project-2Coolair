@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Purchase{% endblock %}
+
+{% block content %}
+    <div class="py-5 text-center">
+    <h2 style="color:#5997c7">Get your free quote</h2>
+    <p class="lead">
+       Specialists in split systems suited to Northern Territory conditions, we'll keep you cool all year round. All UB Cool installed air conditioning systems come with our 5 year warranty for your peace of mind. Get your free quote today.
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">We'll respond within 1 business day
+</h4>
+<form role="form" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons submit='Get your free quote' %}{% endbuttons %}
+</form>
+{#      <form class="needs-validation" novalidate>#}
+{#        <div class="row">#}
+{#          <div class="col-md-6 mb-3">#}
+{#            <label for="firstName">Name</label>#}
+{#            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>#}
+{#            <div class="invalid-feedback">#}
+{#              Valid first name is required.#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="email">Email</label>#}
+{#          <input type="email" class="form-control" id="email" placeholder="you@example.com">#}
+{#          <div class="invalid-feedback">#}
+{#            Please enter a valid email address for shipping updates.#}
+{#          </div>#}
+{#        </div>#}
+{#        <button class="btn btn-primary btn-lg btn-block" type="submit">Get your free quote</button>#}
+{#      </form>#}
+    </div>
+  </div>
+{% endblock %}

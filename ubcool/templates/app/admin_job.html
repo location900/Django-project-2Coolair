@@ -1,0 +1,39 @@
+{% extends 'app/base_admin.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Quotes{% endblock %}
+
+{% block content %}
+    <div>not implement</div>
+{#    <div class="row" style="margin-top:60px;">#}
+{#        <div class="col-12" style="margin-bottom:20px;">#}
+{#            <a class="btn btn-primary" role="botton" href="{% url 'admin_quote_detail' %}">Add</a>#}
+{#        </div>#}
+{#        <div class="col-12">#}
+{#            <table class="table">#}
+{#  <thead class="thead-dark">#}
+{#    <tr>#}
+{#      <th scope="col">Name</th>#}
+{#      <th scope="col">Email</th>#}
+{#      <th scope="col"></th>#}
+{#    </tr>#}
+{#  </thead>#}
+{#  <tbody>#}
+{#     {% for quote in quotes %}#}
+{#             <tr>#}
+{#              <td>{{ quote.name }}</td>#}
+{#              <td>{{ quote.email }}</td>#}
+{#              <td>#}
+{#                  <span style="margin-right:20px"><a href="/admin/quote_detail?id={{ quote.id }}">Modify</a></span>#}
+{#                  <span><a href="/admin/quote?del_id={{ quote.id }}">Delete</a></span>#}
+{#              </td>#}
+{#            </tr>#}
+{#     {% endfor %}#}
+{#  </tbody>#}
+{#</table>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+
+
+{% endblock %}

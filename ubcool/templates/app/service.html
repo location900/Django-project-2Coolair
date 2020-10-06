@@ -1,0 +1,160 @@
+{% extends 'app/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Service & Repair{% endblock %}
+
+{% block content %}
+    <div class="py-5 text-center">
+    <h2 style="color:#5997c7">Need a Warranty Repair?</h2>
+    <p class="lead">
+You don’t have to be an existing customer to use our services and repairs centre. We fix and replace air conditioning units with or without warranty. Check the warranty details of your air conditioner, and send us a warranty repair request.
+    </p>
+        <div style="margin-top:40px;">
+        <h4>Get started by selecting your air conditioning make</h4>
+</div>
+
+    <div>
+
+    <div class="row" style="margin-top:50px;">
+
+    <div class="col">
+       <div class="card" style="width: 18rem; padding:20px">
+  <img src="https://ubcool.com.au/assets/components/phpthumbof/cache/Panasonic%20logo.ab6258132ac0aa210eeefa833cb8da08.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <a href="#" class="btn btn-primary">Select</a>
+  </div>
+</div>
+</div>
+
+<div class="col">
+       <div class="card" style="width: 18rem; padding:20px">
+  <img src="https://ubcool.com.au/assets/components/phpthumbof/cache/Mitsubishi_Logo.ab6258132ac0aa210eeefa833cb8da08.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <a href="#" class="btn btn-primary">Select</a>
+  </div>
+</div>
+</div>
+
+<div class="col">
+       <div class="card" style="width: 18rem; padding:20px">
+  <img src="https://ubcool.com.au/assets/components/phpthumbof/cache/Fujitsu.ab6258132ac0aa210eeefa833cb8da08.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <a href="#" class="btn btn-primary">Select</a>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+  </div>
+
+  <div>
+
+  <form role="form" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons submit='Send Enquiry' %}{% endbuttons %}
+</form>
+
+</div>
+
+
+{#  <div class="row">#}
+{#    <div class="col-md-8 order-md-1">#}
+{#      <h4 class="mb-3">Warranty Repair Enquiry</h4>#}
+{#      <form class="needs-validation" novalidate>#}
+{#        <div style="padding-bottom:40px">#}
+{#           <div class="mb-3">#}
+{#            <label for="firstName">Name</label>#}
+{#            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>#}
+{#            <div class="invalid-feedback">#}
+{#              Valid first name is required.#}
+{#            </div>#}
+{#          </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="adress">Address</label>#}
+{#          <input type="text" class="form-control" id="adress">#}
+{#          <div class="invalid-feedback">#}
+{#            Please enter a valid email address for shipping updates.#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="adress">Phone number</label>#}
+{#          <input type="number" class="form-control" id="phone">#}
+{#          <div class="invalid-feedback">#}
+{#            Please enter a valid email address for shipping updates.#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="email">Email</label>#}
+{#          <input type="email" class="form-control" id="email" placeholder="you@example.com">#}
+{#          <div class="invalid-feedback">#}
+{#            Please enter a valid email address for shipping updates.#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="product">Make + model number of faulty product</label>#}
+{#          <input type="text" class="form-control" id="product">#}
+{#          <div class="invalid-feedback">#}
+{#            Please enter a valid email address for shipping updates.#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="company">Name of installation company</label>#}
+{#          <input type="text" class="form-control" id="company">#}
+{#          <div class="invalid-feedback">#}
+{#            Please enter a valid email address for shipping updates.#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="serial">Unit serial number</label>#}
+{#          <input type="text" class="form-control" id="serial">#}
+{#          <div class="invalid-feedback">#}
+{#            Please enter a valid email address for shipping updates.#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="install_date">Date of installation</label>#}
+{#          <input type="text" class="form-control" id="install_date">#}
+{#          <div class="invalid-feedback">#}
+{#            Please enter a valid email address for shipping updates.#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="install_date">Is the product under warranty still?</label>#}
+{#          <div class="form-check">#}
+{#              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">#}
+{#              <label class="form-check-label" for="defaultCheck1">#}
+{#                Not sure#}
+{#              </label>#}
+{#            </div>#}
+{#            <div class="form-check">#}
+{#              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">#}
+{#              <label class="form-check-label" for="defaultCheck2">#}
+{#                Yes#}
+{#              </label>#}
+{#            </div>#}
+{#            <div class="form-check">#}
+{#              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">#}
+{#              <label class="form-check-label" for="defaultCheck2">#}
+{#                No#}
+{#              </label>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="install_date">Please describe the issues that you're having</label>#}
+{#              <textarea class="form-control">#}
+{#              </textarea>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#          <label for="install_date">Photo Upload (Optional) - Max Size 5MB</label>#}
+{#            <input type="file" class="form-control-file" id="exampleFormControlFile1">#}
+{#        </div>#}
+{#        <button class="btn btn-primary btn-lg btn-block" type="submit">Send Enquiry</button>#}
+{#        </div>#}
+{#      </form>#}
+{#    </div>#}
+{#  </div>#}
+{% endblock %}
