@@ -1,0 +1,36 @@
+{% extends 'app/bootstrap.html' %}
+{% load bootstrap4 %}
+
+{% block bootstrap4_content %}
+    <div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">2Cool Air</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if request.path == "/admin/quote" %}active{% endif %}">
+          <a class="nav-link" href="{% url 'admin_quote' %}">Quote</a>
+        </li>
+        <li class="nav-item {% if request.path == "/admin/warranty_quote" %}active{% endif %}">
+          <a class="nav-link" href="{% url 'admin_warranty_quote' %}">Warranty quote</a>
+        </li>
+        <li class="nav-item {% if request.path == "/admin/job" %}active{% endif %}">
+          <a class="nav-link" href="{% url 'admin_job' %}">Job</a>
+        </li>
+        <li class="nav-item {% if request.path == "/admin/setting" %}active{% endif %}">
+          <a class="nav-link" href="{% url 'admin_setting' %}">Setting</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+          <a class="btn btn-success" role="button" href="{% url 'logout' %}">Logout</a>
+      </form>
+    </div>
+  </nav>
+        <h1>{% block title %}(no title){% endblock %}</h1>
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+        {% block content %}(no content){% endblock %}
+  </div>
+
+{% endblock %}

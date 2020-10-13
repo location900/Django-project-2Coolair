@@ -1,0 +1,53 @@
+{% extends 'app/bootstrap.html' %}
+{% load bootstrap4 %}
+{% block bootstrap4_content %}
+    <div class="container">
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        {{ show_promotion }}
+            {% if show_promotion == '1' %}
+                <div style="position: absolute; left: 0; top: 200px; width: 100px; height: 300px; background: aliceblue">
+                    <img style="max-width: 100%; height: 100%"
+                         src="https://ubcool.com.au/assets/components/phpthumbof/cache/26-6.telstra2.36ba7809d9c89e42912ee0e52ab2745d.png"/>
+                </div>
+            {% endif %}
+            <a class="navbar-brand" href="#">2Cool Air</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item {% if request.path == "/" %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item {% if request.path == "/about" %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item {% if request.path == "/purchase" %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'purchase' %}">Purchase</a>
+                    </li>
+                    <li class="nav-item {% if request.path == "/service" %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'service' %}">Service & Repair</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <a class="btn btn-success" role="button" href="{% url 'login' %}">Login</a>
+                </form>
+            </div>
+        </nav>
+        <h1>{% block title %}(no title){% endblock %}</h1>
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+        {% block content %}(no content){% endblock %}
+        <hr class="featurette-divider" style="margin:5rem 0;">
+    </div>
+    <footer class="container">
+        <style>
+            h1, h2, h3, h4, h5, h6 {
+                color: #5997c7;
+            }
+        </style>
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-2020 Company, Inc.</p>
+    </footer>
+{% endblock %}

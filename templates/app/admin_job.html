@@ -1,0 +1,62 @@
+{% extends 'app/base_admin.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Job{% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-top:60px;">
+        <div class="col-12" style="margin-bottom:20px;">
+            <a class="btn btn-primary" role="botton" href="{% url 'admin_job_detail' %}">Add</a>
+        </div>
+        <div class="col-12">
+            <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Customer name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Date</th>
+      <th scope="col">Is done</th>
+      <th scope="col">Is paid</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for job in jobs %}
+             <tr>
+              <td>{{ job.no }}</td>
+              <td>{{ job.name }}</td>
+              <td>{{ job.customer_name }}</td>
+              <td>{{ job.address }}</td>
+              <td>{{ job.date }}</td>
+              <td>
+                 {% if job.is_done == 1 %}
+                {{ 'No' }}
+                {% endif %}
+                {% if job.is_done == 2 %}
+                {{ 'Yes' }}
+                {% endif %}
+              </td>
+              <td>
+                  {% if job.is_paid == 1 %}
+                {{ 'No' }}
+                {% endif %}
+                {% if job.is_paid == 2 %}
+                {{ 'Yes' }}
+                {% endif %}
+              </td>
+              <td>
+                  <span style="margin-right:20px"><a href="/admin/job_detail?id={{ job.id }}">Modify</a></span>
+                  <span><a href="/admin/job?del_id={{ job.id }}">Delete</a></span>
+              </td>
+            </tr>
+     {% endfor %}
+  </tbody>
+</table>
+        </div>
+
+    </div>
+
+
+{% endblock %}

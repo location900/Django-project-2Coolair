@@ -1,0 +1,16 @@
+{% extends 'app/base_admin.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Job{% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-top:50px;">
+         <div class="col">
+             <form role="form" method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons submit='Save' %}{% endbuttons %}
+            </form>
+         </div>
+    </div>
+{% endblock %}

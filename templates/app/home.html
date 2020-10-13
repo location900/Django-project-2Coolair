@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="col-md-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">GET COOL. STAY COOL.</h1>
+            <p class="lead font-weight-normal">We supply, install and service home and office air conditioners. Making
+                Darwin a cool place to live since 2009, you'll love our range of quality products, competitive pricing,
+                and reliable after sales service.</p>
+            <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col">
+            <div class="card" style="padding:20px">
+                <img src="https://ubcool.com.au/assets/components/phpthumbof/cache/Panasonic%20logo.ab6258132ac0aa210eeefa833cb8da08.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body justify-content-center">
+                    <a href="service?company=1" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card" style="padding:20px">
+                <img src="https://ubcool.com.au/assets/components/phpthumbof/cache/Mitsubishi_Logo.ab6258132ac0aa210eeefa833cb8da08.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="service?company=2" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card" style="padding:20px">
+                <img src="https://ubcool.com.au/assets/components/phpthumbof/cache/Fujitsu.ab6258132ac0aa210eeefa833cb8da08.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="service?company=3" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
